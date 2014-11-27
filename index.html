@@ -32,10 +32,9 @@
 
   var audio_context;
   var recorder;
-  var input;
 
   function startUserMedia(stream) {
-    input = audio_context.createMediaStreamSource(stream);
+    var input = audio_context.createMediaStreamSource(stream);
     __log('Media stream created.');
     
     input.connect(audio_context.destination);
@@ -61,7 +60,7 @@
     // create WAV download link using audio data blob
     createDownloadLink();
     
-    recorder.clear();
+//    recorder.clear();
   }
 
   function createDownloadLink() {
