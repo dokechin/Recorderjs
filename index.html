@@ -60,7 +60,7 @@
     // create WAV download link using audio data blob
     createDownloadLink();
     
-//    recorder.clear();
+    recorder.clear();
   }
 
   function createDownloadLink() {
@@ -78,6 +78,7 @@
       li.appendChild(au);
       li.appendChild(hf);
       recordingslist.appendChild(li);
+      au.load();
     });
   }
 
