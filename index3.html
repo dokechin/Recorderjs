@@ -74,6 +74,7 @@
       var reader = new FileReader();
 
       reader.onload = function(e) {
+        alert(e.target.result);
         var li = document.createElement('li');
         var au = document.createElement('audio');
         var hf = document.createElement('a');
