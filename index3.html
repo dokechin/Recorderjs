@@ -76,7 +76,7 @@
       var hf = document.createElement('a');
       
       au.controls = true;
-      au.src = url;
+      au.src =  'data:audio/wav;base64,' + btoa(blob);;
       hf.href = url;
       hf.download = new Date().toISOString() + '.wav';
       hf.innerHTML = hf.download;
