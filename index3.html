@@ -73,20 +73,20 @@
 
       var reader = new FileReader();
 
-    	reader.addEventListener('load', function(e) {
+      reader.onload = function(e) {
     	alert("loaded");
         var li = document.createElement('li');
         var au = document.createElement('audio');
         var hf = document.createElement('a');
         au.controls = true;
-        au.src =  'data:audio/wav;base64,' + e.target.result;
+        au.src =  'data:audio/wav;base64,' + reader.result;
         hf.href = url;
         hf.download = new Date().toISOString() + '.wav';
         hf.innerHTML = hf.download;
         li.appendChild(au);
         li.appendChild(hf);
         recordingslist.appendChild(li);
-    	});
+      };
       reader.readAsDataURL(blob);
 
     });
