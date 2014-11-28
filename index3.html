@@ -75,6 +75,7 @@
 
       reader.onload = function(e) {
         alert(e.target.result);
+        alert("hello");
         var li = document.createElement('li');
         var au = document.createElement('audio');
         var hf = document.createElement('a');
@@ -86,6 +87,7 @@
         li.appendChild(au);
         li.appendChild(hf);
         recordingslist.appendChild(li);
+        alert("end");
       };
       reader.readAsDataURL(blob);
 
