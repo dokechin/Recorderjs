@@ -70,14 +70,15 @@
       __log('blob type ' + blob.type);
 
 //      var url = URL.createObjectURL(saved_blob);
-      var li = document.createElement('li');
-      var au = document.createElement('audio');
-      var hf = document.createElement('a');
-      
-      au.controls = true;
 
       var reader = new FileReader();
-      reader.onload = function(event){
+        reader.onload = function(event){
+        var li = document.createElement('li');
+        var au = document.createElement('audio');
+        var hf = document.createElement('a');
+        
+        au.controls = true;
+
         au.src =  'data:audio/wav;base64,' + event.target.result;
         hf.href = url;
         hf.download = new Date().toISOString() + '.wav';
