@@ -80,9 +80,11 @@
         var au = document.createElement('audio');
         var hf = document.createElement('a');
         au.controls = true;
+        alert("test1");
         au.src =  e.target.result;
         hf.href = url;
         hf.download = new Date().toISOString() + '.wav';
+        alert("test2");
         hf.innerHTML = hf.download;
         li.appendChild(au);
         li.appendChild(hf);
