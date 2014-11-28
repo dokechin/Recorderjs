@@ -75,13 +75,20 @@
       var hf = document.createElement('a');
       
       au.controls = true;
-      au.src =  'data:audio/wav;base64,' + btoa(blob);
-      hf.href = url;
-      hf.download = new Date().toISOString() + '.wav';
-      hf.innerHTML = hf.download;
-      li.appendChild(au);
-      li.appendChild(hf);
-      recordingslist.appendChild(li);
+
+      var reader = new FileReader();
+      reader.onload = function(event){
+        au.src =  'data:audio/wav;base64,' + btoa(event.target.result);
+        hf.href = url;
+        hf.download = new Date().toISOString() + '.wav';
+        hf.innerHTML = hf.download;
+        li.appendChild(au);
+        li.appendChild(hf);
+        recordingslist.appendChild(li);
+
+      }; // data url!
+      var source = reader.readAsBinaryString(blob);
+
     });
   }
 
