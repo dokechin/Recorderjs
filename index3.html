@@ -78,7 +78,7 @@
 
       var reader = new FileReader();
       reader.onload = function(event){
-        au.src =  'data:audio/wav;base64,' + btoa(event.target.result);
+        au.src =  'data:audio/wav;base64,' + event.target.result;
         hf.href = url;
         hf.download = new Date().toISOString() + '.wav';
         hf.innerHTML = hf.download;
@@ -87,7 +87,7 @@
         recordingslist.appendChild(li);
 
       }; // data url!
-      var source = reader.readAsBinaryString(blob);
+      reader.readAsBinaryString(blob);
 
     });
   }
