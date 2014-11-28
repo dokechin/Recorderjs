@@ -74,12 +74,12 @@
       var reader = new FileReader();
 
       reader.onload = function(e) {
-    	alert("loaded" + reader.result);
+    	alert("loaded" + e.target.result);
         var li = document.createElement('li');
         var au = document.createElement('audio');
         var hf = document.createElement('a');
         au.controls = true;
-        au.src =  'data:audio/wav;base64,' + reader.result;
+        au.src =  'data:audio/wav;base64,' + e.target.result;
         hf.href = url;
         hf.download = new Date().toISOString() + '.wav';
         hf.innerHTML = hf.download;
