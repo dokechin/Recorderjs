@@ -107,12 +107,15 @@
       audio_context = new AudioContext;
       __log('Audio context set up.');
       __log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'available.' : 'not present!'));
+      var media = navigator.getUserMedia ? 'available.' : 'not present!';
+      alert(media);
     } catch (e) {
       alert('No web audio support in this browser!');
     }
     
     navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
       __log('No live audio input: ' + e);
+      alert(e);
     });
   };
   </script>
